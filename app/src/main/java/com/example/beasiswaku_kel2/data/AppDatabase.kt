@@ -1,11 +1,11 @@
-package com.example.belajar_room.data
+package com.example.beasiswaku_kel2.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.belajar_room.data.dao.UserDao
-import com.example.belajar_room.data.entity.User
+import com.example.beasiswaku_kel2.data.dao.UserDao
+import com.example.beasiswaku_kel2.data.entity.User
 
 @Database(entities = [User::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {

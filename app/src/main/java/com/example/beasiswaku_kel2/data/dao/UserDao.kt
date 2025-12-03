@@ -1,4 +1,4 @@
-package com.example.belajar_room.data.dao
+package com.example.beasiswaku_kel2.data.dao
 
 import androidx.room.Dao
 import androidx.room.Delete

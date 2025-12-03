@@ -1,4 +1,4 @@
-package com.example.belajar_room.data.entity
+package com.example.beasiswaku_kel2.data.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
