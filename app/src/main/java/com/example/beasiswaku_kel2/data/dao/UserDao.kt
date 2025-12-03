@@ -5,7 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.example.belajar_room.data.entity.User
+import com.example.beasiswaku_kel2.data.entity.User
 
 @Dao
 interface UserDao {

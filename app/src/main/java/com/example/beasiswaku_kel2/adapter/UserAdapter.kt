@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.belajar_room.R
-import com.example.belajar_room.data.entity.User
-import com.example.belajar_room.databinding.ActivityEditorBinding
+import com.example.beasiswaku_kel2.R
+import com.example.beasiswaku_kel2.data.entity.User
+import com.example.beasiswaku_kel2.databinding.ActivityMainBinding
 
 class UserAdapter(var list: List<User>) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
