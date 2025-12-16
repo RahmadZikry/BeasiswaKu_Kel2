@@ -45,6 +45,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.android.material:material:1.6.0")
     implementation("androidx.emoji2:emoji2-views-helper:1.6.0")
     implementation("androidx.emoji2:emoji2:1.6.0")
     implementation("com.microsoft.onnxruntime:onnxruntime-android:1.18.0")

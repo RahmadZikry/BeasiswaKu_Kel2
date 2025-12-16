@@ -1,97 +1,309 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:background="#F5F5F5">
+    android:background="#F5F9FF"
+    tools:context=".CekKelayakan">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="24dp">
 
-        <TextView
-            android:text="Prediksi Kelayakan Beasiswa"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:gravity="center"
+        <!-- Header Card -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="20dp" />
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#4A6FA5">
 
-        <!-- Avg Grade -->
-        <TextView
-            android:text="Nilai Rata-rata (Avg_Grade)"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
 
-        <EditText
-            android:id="@+id/inputAvgGrade"
+                <TextView
+                    android:text="Cek Kelayakan Beasiswa"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:text="Masukkan data berikut untuk mengetahui kelayakan Anda mendapatkan beasiswa"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#E3F2FD"
+                    android:paddingTop="8dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Form Container Card -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contoh: 12.5"
-            android:inputType="numberDecimal"
-            android:background="@android:drawable/edit_text"
-            android:padding="10dp"
-            android:layout_marginBottom="15dp" />
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
 
-        <!-- Medu -->
-        <TextView
-            android:text="Pendidikan Ibu (Medu)"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
 
-        <EditText
-            android:id="@+id/inputMedu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="0 - 4"
-            android:inputType="numberDecimal"
-            android:background="@android:drawable/edit_text"
-            android:padding="10dp"
-            android:layout_marginBottom="15dp" />
+                <!-- Avg Grade Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
 
-        <!-- Fedu -->
-        <TextView
-            android:text="Pendidikan Ayah (Fedu)"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="Nilai Rata-rata"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333333"
+                        android:drawablePadding="8dp"
+                        android:drawableStart="@drawable/ic_grade" />
 
-        <EditText
-            android:id="@+id/inputFedu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="0 - 4"
-            android:inputType="numberDecimal"
-            android:background="@android:drawable/edit_text"
-            android:padding="10dp"
-            android:layout_marginBottom="20dp" />
+                    <TextView
+                        android:text="Skala: 0 - 16.0 (contoh: 12.5, 15.2)"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#666666"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="8dp" />
 
-        <!-- Predict Button -->
-        <Button
-            android:id="@+id/btnPredict"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Prediksi"
-            android:padding="12dp"
-            android:textSize="18sp"
-            android:backgroundTint="#3F51B5"
-            android:textColor="#FFFFFF" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Masukkan nilai rata-rata"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxStrokeColor="#4A6FA5"
+                        app:hintTextColor="#666666">
 
-        <!-- Output -->
-        <TextView
-            android:id="@+id/textResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:paddingTop="30dp" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputAvgGrade"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            android:maxLength="4"
+                            android:padding="16dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <!-- Medu Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:text="Pendidikan Ibu (Medu)"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333333"
+                        android:drawablePadding="8dp"
+                        android:drawableStart="@drawable/ic_mother" />
+
+                    <TextView
+                        android:text="Pilih tingkat pendidikan terakhir ibu"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#666666"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="8dp" />
+
+                    <!-- Education Level Info -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="#F0F7FF"
+                        android:padding="12dp"
+                        android:layout_marginBottom="8dp"
+                        android:backgroundTint="#F0F7FF"
+                        android:backgroundTintMode="multiply">
+
+                        <TextView
+                            android:text="Kode Pendidikan:"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#4A6FA5" />
+
+                        <TextView
+                            android:text="1 = SD\n2 = SMP\n3 = SMA\n4 = Kuliah"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#4A6FA5"
+                            android:lineSpacingExtra="2dp"
+                            android:paddingTop="4dp" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Masukkan kode (1-4)"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxStrokeColor="#4A6FA5"
+                        app:hintTextColor="#666666">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputMedu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:padding="16dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <!-- Fedu Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:text="Pendidikan Ayah (Fedu)"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333333"
+                        android:drawablePadding="8dp"
+                        android:drawableStart="@drawable/ic_father" />
+
+                    <TextView
+                        android:text="Pilih tingkat pendidikan terakhir ayah"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#666666"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="8dp" />
+
+                    <!-- Reuse Education Level Info for Fedu -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="#F0F7FF"
+                        android:padding="12dp"
+                        android:layout_marginBottom="8dp"
+                        android:backgroundTint="#F0F7FF"
+                        android:backgroundTintMode="multiply">
+
+                        <TextView
+                            android:text="Kode Pendidikan:"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#4A6FA5" />
+
+                        <TextView
+                            android:text="1 = SD\n2 = SMP\n3 = SMA\n4 = Kuliah"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#4A6FA5"
+                            android:lineSpacingExtra="2dp"
+                            android:paddingTop="4dp" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Masukkan kode (1-4)"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxStrokeColor="#4A6FA5"
+                        app:hintTextColor="#666666">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputFedu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:padding="16dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <!-- Predict Button -->
+                <Button
+                    android:id="@+id/btnPredict"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="PREDIKSI KELAYAKAN"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.5"
+                    android:backgroundTint="#4A6FA5"
+                    android:textColor="#FFFFFF"
+                    android:padding="0dp"
+                    android:stateListAnimator="@null"
+                    android:elevation="2dp"
+                    style="?attr/materialButtonOutlinedStyle"
+                    app:cornerRadius="28dp" />
+
+                <!-- Info Footer -->
+                <TextView
+                    android:text="Sistem akan menganalisis data Anda untuk memprediksi kelayakan mendapatkan beasiswa"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666666"
+                    android:paddingTop="16dp"
+                    android:lineSpacingExtra="2dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
-
 </ScrollView>
