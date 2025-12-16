@@ -14,18 +14,56 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BeasiswaKu_Kel2">
+        <activity
+            android:name=".halaman.RekomendasiBeasiswa"
+            android:exported="false" />
 
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-
+            android:name=".CekKelayakan"
+            android:exported="true"
+            android:theme="@style/Theme.BeasiswaKu_Kel2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
+        <!-- Activity Hasil -->
+        <activity
+            android:name=".HasilTest"
+            android:exported="false"
+            android:parentActivityName=".CekKelayakan"
+            android:theme="@style/Theme.BeasiswaKu_Kel2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CekKelayakan" />
+        </activity>
+
+        <activity
+            android:name=".halaman.DetailBeasiswa"
+            android:exported="false" />
+        <activity
+            android:name=".halaman.InformasiBeasiswa"
+            android:exported="false" />
+        <activity
+            android:name=".halaman.Beranda"
+            android:exported="false" />
+        <activity
+            android:name=".halaman.Daftar"
+            android:exported="false" />
+        <activity
+            android:name=".halaman.Login"
+            android:exported="false" />
+
+<!--        <activity-->
+<!--            android:name=".halaman.MainActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
     </application>
 
 </manifest>

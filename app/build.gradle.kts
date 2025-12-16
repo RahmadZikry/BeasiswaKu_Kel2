@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -44,6 +45,8 @@ android {
 }
 
 dependencies {
+    implementation("androidx.emoji2:emoji2-views-helper:1.6.0")
+    implementation("androidx.emoji2:emoji2:1.6.0")
     implementation("com.microsoft.onnxruntime:onnxruntime-android:1.18.0")
     val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")
@@ -54,6 +57,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation("com.google.firebase:firebase-database:20.3.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

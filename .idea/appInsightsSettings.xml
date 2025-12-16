@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.beasiswaku_kel2" />
+                  <option name="mobileSdkAppId" value="1:936823222518:android:30906b79ad52f238a63cd7" />
+                  <option name="projectId" value="beasiswakukel2-b84e8d51" />
+                  <option name="projectNumber" value="936823222518" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
