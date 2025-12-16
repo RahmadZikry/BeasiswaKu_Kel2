@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "936823222518",
+    "project_id": "beasiswakukel2-b84e8d51",
+    "storage_bucket": "beasiswakukel2-b84e8d51.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936823222518:android:30906b79ad52f238a63cd7",
+        "android_client_info": {
+          "package_name": "com.example.beasiswaku_kel2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb5KgDMOXP2ILwY16oL-KUN4q6zxfFg8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
